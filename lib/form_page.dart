@@ -60,7 +60,8 @@ class _FormPageState extends State<FormPage> {
                 SizedBox(width: 12),
                 Text(
                   '${widget.title} Traffic Police',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -86,7 +87,12 @@ class _FormPageState extends State<FormPage> {
               OutlinedButton(
                 onPressed: () {
                   dbHelper!
-                      .insert(NotesModel(name: nameController.text))
+                      .insert(NotesModel(
+                          name: nameController.text,
+                          cnic: cnicController.text,
+                          age: ageController.text,
+                          phone: phoneController.text,
+                          email: emailController.text))
                       .then((value) {
                     debugPrint('Data Added');
                   }).onError((error, stackTrace) {
