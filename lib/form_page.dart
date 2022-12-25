@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:semester_project/SQLite/database_handler.dart';
-import 'package:semester_project/SQLite/notes_model.dart';
+import 'package:semester_project/SQLite/users_model.dart';
 import 'package:semester_project/Widgets/navigator_widget.dart';
 import 'package:semester_project/Widgets/text_field_widget.dart';
 import 'package:semester_project/generated_license_page.dart';
@@ -108,6 +108,7 @@ class _FormPageState extends State<FormPage> {
                     age: ageController.text,
                     phone: phoneController.text,
                     email: emailController.text,
+                    title: widget.title,
                   ))
                       .then((value) {
                     debugPrint('Data Added');

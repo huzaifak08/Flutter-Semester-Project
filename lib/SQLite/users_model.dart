@@ -5,6 +5,7 @@ class NotesModel {
   final String age;
   final String phone;
   final String email;
+  final String title;
 
   NotesModel(
       {this.id,
@@ -12,7 +13,8 @@ class NotesModel {
       required this.cnic,
       required this.age,
       required this.phone,
-      required this.email});
+      required this.email,
+      required this.title});
 
   NotesModel.fromMap(Map<String, dynamic> res)
       : id = res['id'],
@@ -20,7 +22,8 @@ class NotesModel {
         cnic = res['cnic'],
         age = res['age'],
         phone = res['phone'],
-        email = res['email'];
+        email = res['email'],
+        title = res['title'];
 
   Map<String, Object?> toMap() {
     return {
@@ -30,6 +33,7 @@ class NotesModel {
       'age': age,
       'phone': phone,
       'email': email,
+      'title': title,
     };
   }
 }

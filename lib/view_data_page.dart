@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:semester_project/SQLite/database_handler.dart';
-import 'package:semester_project/SQLite/notes_model.dart';
+import 'package:semester_project/SQLite/users_model.dart';
 import 'package:semester_project/Widgets/pdf_license_row_widget.dart';
 
 class ViewDataPage extends StatefulWidget {
@@ -47,12 +47,18 @@ class _ViewDataPageState extends State<ViewDataPage> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
-                            height: 200,
+                            height: 220,
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.transparent),
                                 borderRadius: BorderRadius.circular(23)),
                             child: Column(
                               children: [
+                                Text(
+                                  '${snapshot.data![index].title} Traffic Police',
+                                  style: TextStyle(
+                                      color: Colors.deepPurple,
+                                      fontWeight: FontWeight.bold),
+                                ),
                                 RowKeyValue(
                                     mykey: 'ID',
                                     value: snapshot.data![index].id.toString()),
