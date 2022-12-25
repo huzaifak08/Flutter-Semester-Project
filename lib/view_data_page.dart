@@ -86,9 +86,9 @@ class _ViewDataPageState extends State<ViewDataPage> {
                                             .remove(snapshot.data![index]);
                                       });
                                     },
-                                    child: Text('Delete'),
                                     style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.red))
+                                        backgroundColor: Colors.red),
+                                    child: const Text('Delete'))
                               ],
                             ),
                           ),

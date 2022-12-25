@@ -37,7 +37,7 @@ class _FormPageState extends State<FormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size(85, 85),
+        preferredSize: const Size(85, 85),
         child: SafeArea(
             child: Container(
           height: 100,
@@ -57,7 +57,7 @@ class _FormPageState extends State<FormPage> {
                     child: Image.asset(widget.imagePath),
                   ),
                 ),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
                 Text(
                   '${widget.title} Traffic Police',
                   style: const TextStyle(
@@ -74,25 +74,41 @@ class _FormPageState extends State<FormPage> {
           child: Column(
             children: [
               const SizedBox(height: 55),
-              MyTextField(title: 'Name', controller: nameController),
+              MyTextField(
+                  title: 'Name',
+                  controller: nameController,
+                  keyboardType: TextInputType.name),
               const SizedBox(height: 40),
-              MyTextField(title: 'CNIC', controller: cnicController),
+              MyTextField(
+                  title: 'CNIC',
+                  controller: cnicController,
+                  keyboardType: TextInputType.number),
               const SizedBox(height: 40),
-              MyTextField(title: 'Age', controller: ageController),
+              MyTextField(
+                  title: 'Age',
+                  controller: ageController,
+                  keyboardType: TextInputType.number),
               const SizedBox(height: 40),
-              MyTextField(title: 'Phone', controller: phoneController),
+              MyTextField(
+                  title: 'Phone',
+                  controller: phoneController,
+                  keyboardType: TextInputType.phone),
               const SizedBox(height: 40),
-              MyTextField(title: 'Email', controller: emailController),
+              MyTextField(
+                  title: 'Email',
+                  controller: emailController,
+                  keyboardType: TextInputType.emailAddress),
               const SizedBox(height: 35),
               OutlinedButton(
                 onPressed: () {
                   dbHelper!
                       .insert(NotesModel(
-                          name: nameController.text,
-                          cnic: cnicController.text,
-                          age: ageController.text,
-                          phone: phoneController.text,
-                          email: emailController.text))
+                    name: nameController.text,
+                    cnic: cnicController.text,
+                    age: ageController.text,
+                    phone: phoneController.text,
+                    email: emailController.text,
+                  ))
                       .then((value) {
                     debugPrint('Data Added');
                   }).onError((error, stackTrace) {
@@ -112,7 +128,7 @@ class _FormPageState extends State<FormPage> {
                     ),
                   );
                 },
-                child: Text(
+                child: const Text(
                   'Submit',
                   style: TextStyle(
                     color: Colors.deepPurple,

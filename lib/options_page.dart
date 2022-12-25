@@ -19,7 +19,7 @@ class OptionsPage extends StatelessWidget {
                 BuildContainer(
                   title: 'Islamabad',
                   imagePath: 'assets/islamabad.png',
-                  color: Color(0xFF8FC6FD),
+                  color: const Color(0xFF8FC6FD),
                 ),
                 BuildContainer(
                   title: 'KPK',
@@ -28,18 +28,18 @@ class OptionsPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 80),
+            const SizedBox(height: 80),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 BuildContainer(
                   imagePath: 'assets/punjab.png',
-                  color: Color(0xFFA18CD1),
+                  color: const Color(0xFFA18CD1),
                   title: 'Punjab',
                 ),
                 BuildContainer(
                   imagePath: 'assets/sindh.png',
-                  color: Color(0xFFEE4D5F),
+                  color: const Color(0xFFEE4D5F),
                   title: 'Sindh',
                 )
               ],

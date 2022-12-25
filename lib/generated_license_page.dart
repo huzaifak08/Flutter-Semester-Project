@@ -29,7 +29,7 @@ class GeneratedLicensePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size(85, 85),
+        preferredSize: const Size(85, 85),
         child: SafeArea(
           child: Container(
             height: 100,
@@ -61,43 +61,45 @@ class GeneratedLicensePage extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 44),
-        child: Column(
-          children: [
-            const Text(
-              'YOUR LEARNER CERTIFICATE',
-              style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
-            ),
-            const Divider(height: 10, thickness: 2),
-            const SizedBox(height: 32),
-            RowKeyValue(mykey: 'Name', value: name),
-            const SizedBox(height: 32),
-            RowKeyValue(mykey: 'CNIC', value: cnic),
-            const SizedBox(height: 32),
-            RowKeyValue(mykey: 'Age', value: age),
-            const SizedBox(height: 32),
-            RowKeyValue(mykey: 'Phone', value: phone),
-            const SizedBox(height: 32),
-            RowKeyValue(mykey: 'Email', value: email),
-            const SizedBox(height: 32),
-            Text(
-                'Date/Time: ${DateFormat(' yyyy-MM-dd     kk:mm').format(dateTime)}'),
-            const SizedBox(height: 32),
-            const Divider(height: 10, thickness: 2),
-            const SizedBox(height: 52),
-            Text(
-              'Go for driving test after 40 Days',
-              style: TextStyle(color: Colors.grey),
-            ),
-            const SizedBox(height: 52),
-            TextButton(
-              onPressed: () {
-                nextScreen(context, ViewDataPage());
-              },
-              child: Text('View Your Data in Database'),
-            )
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 44),
+          child: Column(
+            children: [
+              const Text(
+                'YOUR LEARNER CERTIFICATE',
+                style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+              ),
+              const Divider(height: 10, thickness: 2),
+              const SizedBox(height: 32),
+              RowKeyValue(mykey: 'Name', value: name),
+              const SizedBox(height: 32),
+              RowKeyValue(mykey: 'CNIC', value: cnic),
+              const SizedBox(height: 32),
+              RowKeyValue(mykey: 'Age', value: age),
+              const SizedBox(height: 32),
+              RowKeyValue(mykey: 'Phone', value: phone),
+              const SizedBox(height: 32),
+              RowKeyValue(mykey: 'Email', value: email),
+              const SizedBox(height: 32),
+              Text(
+                  'Date/Time: ${DateFormat(' yyyy-MM-dd     kk:mm').format(dateTime)}'),
+              const SizedBox(height: 32),
+              const Divider(height: 10, thickness: 2),
+              const SizedBox(height: 52),
+              const Text(
+                'Go for driving test after 40 Days',
+                style: TextStyle(color: Colors.grey),
+              ),
+              const SizedBox(height: 52),
+              TextButton(
+                onPressed: () {
+                  nextScreen(context, const ViewDataPage());
+                },
+                child: const Text('View Your Data in Database'),
+              )
+            ],
+          ),
         ),
       ),
     );

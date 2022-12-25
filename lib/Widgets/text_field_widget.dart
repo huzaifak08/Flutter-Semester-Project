@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 class MyTextField extends StatelessWidget {
   String title;
   TextEditingController controller;
-  MyTextField({super.key, required this.title, required this.controller});
+  TextInputType keyboardType;
+  MyTextField(
+      {super.key,
+      required this.title,
+      required this.controller,
+      required this.keyboardType});
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +22,21 @@ class MyTextField extends StatelessWidget {
               borderSide: BorderSide.none,
               borderRadius: BorderRadius.circular(12)),
           label: Text(title),
-          labelStyle: TextStyle(color: Colors.black),
-          fillColor: Color(0xFFA5D1FD),
+          labelStyle: const TextStyle(color: Colors.black),
+          fillColor: const Color(0xFFA5D1FD),
           // focusColor: Colors.red
           filled: true,
         ),
+        keyboardType: keyboardType,
       ),
     );
   }
 }
+
+InputDecoration textInputDecoration = InputDecoration(
+  border: OutlineInputBorder(
+      borderSide: BorderSide.none, borderRadius: BorderRadius.circular(12)),
+  labelStyle: const TextStyle(color: Colors.black),
+  fillColor: const Color(0xFFA5D1FD),
+  filled: true,
+);
